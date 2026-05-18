@@ -86,3 +86,33 @@ public class StringQuestions {
                 System.out.println("Duplicate Character : " + ch[i]);
     }
 }
+   7. public static boolean isAnagram(String str1, String str2) {
+        char[] arr1 = str1.toLowerCase().toCharArray();
+        char[] arr2 = str2.toLowerCase().toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        return Arrays.equals(arr1, arr2);
+    }
+
+  8. Alternate Case Conversion
+    public static String alternateCase(String str) {
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            if (i % 2 == 0) {
+                result += Character.toUpperCase(ch);
+
+            } else {
+                result += Character.toLowerCase(ch);
+            }
+        }
+
+        return result;
+    }
+}
