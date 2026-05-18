@@ -1,0 +1,88 @@
+import java.util.HashMap;
+
+public class StringQuestions {
+
+     1. Reverse a String
+    public static String reverseString(String str) {
+
+        String reversed = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        return reversed;
+    }
+
+     2. Check Palindrome
+    public static boolean isPalindrome(String str) {
+
+        String reversed = reverseString(str);
+
+        return str.equalsIgnoreCase(reversed);
+    }
+
+    3. Count Vowels in String
+    public static int countVowels(String str) {
+
+        int count = 0;
+
+        str = str.toLowerCase();
+
+        for (char ch : str.toCharArray()) {
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u') {
+
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+     4. Remove Spaces from String
+    public static String removeSpaces(String str) {
+        return str.replaceAll("\\s", "");
+    }
+
+     5. Count Character Frequency
+    public static void characterFrequency(String str) {
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
+            }
+        }
+
+        System.out.println("Character Frequency : " + map);
+    }
+
+
+     6. Find Duplicate Characters
+    public static void findDuplicateCharacters(String str) {
+
+        char[] ch = str.toCharArray();
+
+        for (int i = 0; i < ch.length; i++) {
+
+            int count = 1;
+
+            for (int j = i + 1; j < ch.length; j++) {
+
+                if (ch[i] == ch[j] && ch[i] != ' ') {
+
+                    count++;
+                    ch[j] = '0';
+                }
+            }
+
+            if (count > 1 && ch[i] != '0') {
+                System.out.println("Duplicate Character : " + ch[i]);
+    }
+}
