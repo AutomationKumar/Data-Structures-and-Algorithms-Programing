@@ -1,0 +1,80 @@
+import java.util.HashMap;
+import java.util.Map;
+public class HashMapQuestions {
+
+     1. Store and Print Key-Value Pairs
+    public static void storeAndPrint() {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(101, "Rohan");
+        map.put(102, "Aman");
+        map.put(103, "Rahul");
+
+        System.out.println("HashMap Data : " + map);
+    }
+
+     2. Find Frequency of Characters
+    public static void characterFrequency(String str) {
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+
+            } else {
+                map.put(ch, 1);
+            }
+        }
+
+        System.out.println("Character Frequency : " + map);
+    }
+
+     3. Check Key Exists
+    public static void checkKey() {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Java");
+        map.put(2, "Selenium");
+
+        if (map.containsKey(1)) {
+
+            System.out.println("Key Exists");
+
+        } else {
+
+            System.out.println("Key Not Found");
+        }
+    }
+
+     4. Iterate HashMap
+    public static void iterateHashMap() {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(101, "API");
+        map.put(102, "UI");
+        map.put(103, "Database");
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+    }
+
+     5. Remove Duplicate Elements from Array
+    public static void removeDuplicates(int[] arr) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int num : arr) {
+
+            map.put(num, 1);
+        }
+
+        System.out.println("Unique Elements : " + map.keySet());
+    }
+}
