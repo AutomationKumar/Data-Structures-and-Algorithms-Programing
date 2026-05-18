@@ -66,7 +66,7 @@ public class ArrayQuestions {
         return secondLargest;
     }
 
-// 6. Find Maximum and Minimum Element
+5 . Find Maximum and Minimum Element
 public static void findMaxMin(int[] arr) {
 
     int max = arr[0];
@@ -85,4 +85,61 @@ public static void findMaxMin(int[] arr) {
 
     System.out.println("Maximum Element : " + max);
     System.out.println("Minimum Element : " + min);
+}
+
+   6. public static int maxSubarraySum(int[] arr) {
+
+        int maxSum = arr[0];
+        int currentSum = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+
+            currentSum = Math.max(arr[i],
+                    currentSum + arr[i]);
+
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        return maxSum;
+    }
+7. public static void twoSum(int[] arr, int target) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int difference = target - arr[i];
+
+            if (map.containsKey(difference)) {
+
+                System.out.println("Two Sum Pair : "
+                        + difference + " , " + arr[i]);
+
+                return;
+            }
+
+            map.put(arr[i], i);
+        }
+    }
+
+8 .public static void moveZerosToEnd(int[] arr) {
+
+        int index = 0;
+
+        for (int num : arr) {
+
+            if (num != 0) {
+
+                arr[index++] = num;
+            }
+        }
+
+        while (index < arr.length) {
+
+            arr[index++] = 0;
+        }
+
+        System.out.println("After Moving Zeros : "
+                + Arrays.toString(arr));
+    }
 }
